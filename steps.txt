@@ -1,0 +1,2 @@
+1. sorters
+ - mvn archetype:generate -DgroupId=biju.joseph.growing -DartifactId=sorters -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
