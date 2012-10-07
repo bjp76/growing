@@ -14,6 +14,6 @@ public interface Sorter {
      * @param list  - The list to sort
      * @return   - A new sorted list.
      */
-    <T extends Comparable<?>> List<T> sort(List<T> list);
+    <T extends Comparable> List<T> sort(List<T> list);
 
 }

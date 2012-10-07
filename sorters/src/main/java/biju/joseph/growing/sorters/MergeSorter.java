@@ -26,7 +26,7 @@ public class MergeSorter implements Sorter {
      * @return sorted list
      */
     @Override
-    public <T extends Comparable<?>> List<T> sort(List<T> list) {
+    public <T extends Comparable> List<T> sort(List<T> list) {
 
         if (logger.isLoggable(FINE)) logger.log(FINE, "Sort => " + String.valueOf(list));
 
