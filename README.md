@@ -21,7 +21,7 @@ contacts
     - Javascript tests using jasmine.
 
 FAQ
-------
+----
  - How to rul all tests ?
    - mvn clean test
 
