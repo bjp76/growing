@@ -37,7 +37,7 @@ public class BubbleSorterTest {
 
     @Test
     public void testSortStrings() {
-        List<String> in = Arrays.asList("IN", "AU", "US", "UK", "RU", "CA");
+        List<String> in = Arrays.asList("IN", "AU" , "US" , "UK" , "RU" , "CA");
         List<String> out = sorter.sort(in);
         assertEquals(Arrays.asList("AU", "CA", "IN", "RU", "UK", "US"), out);
     }
@@ -56,7 +56,7 @@ public class BubbleSorterTest {
                 new URI("http://java.sun.com/j2se/1.2"),
                 new URI("http://java.sun.com/j2se/1.3"),
                 new URI("http://java.sun.com/j2se/1.4"),
-                new URI("http://java.sun.com/j2se/1.5")), out);
+                new URI("http://java.sun.com/j2se/1.5")) , out );
     }
 
 
@@ -80,7 +80,7 @@ public class BubbleSorterTest {
         List<Integer> in = Arrays.asList(8);
         List<Integer> out = sorter.sort(in);
         assertEquals(1, out.size());
-        assertEquals(8, out.get(0));
+        assertEquals(new Integer(8), out.get(0));
     }
 
     @Test
@@ -90,8 +90,8 @@ public class BubbleSorterTest {
             List<Integer> in = Arrays.asList(8, 2);
             List<Integer> out = sorter.sort(in);
             assertEquals(2, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(8, out.get(1));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(8), out.get(1));
         }
 
         //already sorted list
@@ -99,8 +99,8 @@ public class BubbleSorterTest {
             List<Integer> in = Arrays.asList(2, 8);
             List<Integer> out = sorter.sort(in);
             assertEquals(2, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(8, out.get(1));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(8), out.get(1));
         }
 
         //already sorted list, with same elements
@@ -108,8 +108,8 @@ public class BubbleSorterTest {
             List<Integer> in = Arrays.asList(2, 2);
             List<Integer> out = sorter.sort(in);
             assertEquals(2, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(2, out.get(1));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(2), out.get(1));
         }
     }
 
@@ -119,17 +119,18 @@ public class BubbleSorterTest {
             List<Integer> in = Arrays.asList(2, 8, 3);
             List<Integer> out = sorter.sort(in);
             assertEquals(3, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(3, out.get(1));
-            assertEquals(8, out.get(2));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(3), out.get(1));
+            assertEquals(new Integer(8), out.get(2));
         }
         {
             List<Integer> in = Arrays.asList(2, 8, 2);
             List<Integer> out = sorter.sort(in);
             assertEquals(3, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(2, out.get(1));
-            assertEquals(8, out.get(2));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(2), out.get(1));
+            assertEquals(new Integer(8), out.get(2));
         }
     }
+
 }

@@ -79,7 +79,7 @@ public class MergeSorterTest {
         List<Integer> in = Arrays.asList(8);
         List<Integer> out = sorter.sort(in);
         assertEquals(1, out.size());
-        assertEquals(8, out.get(0));
+        assertEquals(new Integer(8), out.get(0));
     }
 
     @Test
@@ -89,8 +89,8 @@ public class MergeSorterTest {
             List<Integer> in = Arrays.asList(8, 2);
             List<Integer> out = sorter.sort(in);
             assertEquals(2, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(8, out.get(1));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(8), out.get(1));
         }
 
         //already sorted list
@@ -98,8 +98,8 @@ public class MergeSorterTest {
             List<Integer> in = Arrays.asList(2, 8);
             List<Integer> out = sorter.sort(in);
             assertEquals(2, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(8, out.get(1));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(8), out.get(1));
         }
 
         //already sorted list, with same elements
@@ -107,8 +107,8 @@ public class MergeSorterTest {
             List<Integer> in = Arrays.asList(2, 2);
             List<Integer> out = sorter.sort(in);
             assertEquals(2, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(2, out.get(1));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(2), out.get(1));
         }
     }
 
@@ -118,17 +118,17 @@ public class MergeSorterTest {
             List<Integer> in = Arrays.asList(2, 8, 3);
             List<Integer> out = sorter.sort(in);
             assertEquals(3, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(3, out.get(1));
-            assertEquals(8, out.get(2));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(3), out.get(1));
+            assertEquals(new Integer(8), out.get(2));
         }
         {
             List<Integer> in = Arrays.asList(2, 8, 2);
             List<Integer> out = sorter.sort(in);
             assertEquals(3, out.size());
-            assertEquals(2, out.get(0));
-            assertEquals(2, out.get(1));
-            assertEquals(8, out.get(2));
+            assertEquals(new Integer(2), out.get(0));
+            assertEquals(new Integer(2), out.get(1));
+            assertEquals(new Integer(8), out.get(2));
         }
     }
 
