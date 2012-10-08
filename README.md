@@ -19,3 +19,12 @@ contacts
  I will add to this app support for the following
     - Feature tests using cucumber-jvm
     - Javascript tests using jasmine.
+
+FAQ
+-----------
+ - How to rul all tests ?
+    mvn clean test
+
+ - How to access contacts webapp in browser ?
+    mvn clean install jetty:run
+    Then in browser access the url: http://localhost:8080/
