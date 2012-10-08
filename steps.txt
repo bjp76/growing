@@ -1,3 +1,8 @@
 1. sorters
  - mvn archetype:generate -DgroupId=biju.joseph.growing -DartifactId=sorters -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
  - add surefire plugin in the pom
+
+ 2. contacts
+ - install archtype : http://code.google.com/p/spring-archetypes/
+ - mvn archetype:generate -DarchetypeCatalog=local
+ - mvn clean install jetty:run

@@ -12,5 +12,6 @@
     </properties>
     <modules>
     <module>sorters</module>
+    <module>contacts</module>
   </modules>
 </project>
