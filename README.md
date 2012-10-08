@@ -26,5 +26,5 @@ FAQ
     mvn clean test
 
  - How to access contacts webapp in browser ?
-    mvn clean install jetty:run
-    Then in browser access the url: http://localhost:8080/
+    - mvn clean install jetty:run
+    - Then in browser access the url: http://localhost:8080/
