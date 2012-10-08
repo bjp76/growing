@@ -23,7 +23,7 @@ contacts
 FAQ
 -----------
  - How to rul all tests ?
-    - mvn clean test
+   - mvn clean test
 
  - How to access contacts webapp in browser ?
     - mvn clean install jetty:run
