@@ -22,9 +22,13 @@ contacts
 
 FAQ
 ----
- - How to rul all tests ?
+ - How to run all tests ?
    - mvn clean test
 
  - How to access contacts webapp in browser ?
+    - cd contacts
     - mvn clean install jetty:run
     - Then in browser access the url: http://localhost:8080/
+
+ - How to run automated cucumber tests ?
+
