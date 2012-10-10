@@ -13,11 +13,11 @@ sorters
 
 contacts
 --------
- This module contains a simple SpringMVC + Hibernate webapp (downloaded from internet and modified) along with the following kinds of tests
+ This module contains a simple SpringMVC + Hibernate webapp along with the following kinds of tests
    - JUnit tests, with EasyMock
    - JUnit tests using DbUnit to test Repository layer
- I will add to this app support for the following
-    - Feature tests using cucumber-jvm
+   - Feature tests using cucumber-jvm
+ TODOs
     - Javascript tests using jasmine.
 
 FAQ
@@ -30,5 +30,13 @@ FAQ
     - mvn clean install jetty:run
     - Then in browser access the url: http://localhost:8080/
 
- - How to run automated cucumber tests ?
+ - How to run *only* automated cucumber tests ?
+   -  cd contacts
+   - mvn clean verify -Pintegration-tests
+
+ - How to run automated cucumber tests in IE or Chrome or Firefox ?
+   - Use -Dbrowser=IE for IE  , -Dbrowser=chrome for Chrome , default is Firefox
+
+   The following will run the test against IE browser.
+   - mvn clean verify -Pintegration-tests -Dbrowser=ie
 

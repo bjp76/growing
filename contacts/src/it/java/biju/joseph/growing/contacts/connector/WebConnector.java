@@ -18,10 +18,11 @@ public class WebConnector {
         System.out.println("Calling current Driver");
         if(WebConnector.driver == null){
             System.out.println("Creating new driver");
-            String browser = System.getenv().get("browser");
+            String browser = System.getenv().get("browser") == null ? "firefox" : System.getenv().get("browser");
+
             if(browser.equals("ie")) WebConnector.driver = new InternetExplorerDriver();
             if(browser.equals("chrome")) WebConnector.driver = new ChromeDriver();
-            if(browser == null || browser.equals("firefox")|| WebConnector.driver == null) WebConnector.driver = new FirefoxDriver();
+            if(browser.equals("firefox")) WebConnector.driver = new FirefoxDriver();
         }
         return driver;
     }
