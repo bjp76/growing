@@ -18,6 +18,7 @@ contacts
    - JUnit tests using DbUnit to test Repository layer
    - Feature tests using cucumber-jvm
  TODOs
+ -----
     - Javascript tests using jasmine.
 
 FAQ
