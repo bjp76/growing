@@ -14,10 +14,8 @@ public class ViewAllContactsPage extends Page{
     public ViewAllContactsPage(WebDriver driver){
         super(driver, "/viewAllContacts.do");
     }
-
-    public boolean hasNoContactsAvailableMessage(){
-        WebElement content = driver.findElement(By.tagName("body"));
-        System.out.println(content.getText());
-        return content.getText().contains("There are no contacts available in the system. Click on Add New Contact button to create a new contact.");
+    public void clickNewContactButton(){
+       getElement("//input[@value='New Contact']").click();
     }
+
 }

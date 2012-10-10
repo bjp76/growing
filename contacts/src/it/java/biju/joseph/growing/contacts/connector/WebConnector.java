@@ -13,37 +13,25 @@ public class WebConnector {
 
     private static WebDriver driver;
 
-    public static WebDriver createFirefoxDriver(){
+
+    public synchronized static WebDriver currentDriver(){
+        System.out.println("Calling current Driver");
         if(WebConnector.driver == null){
-            System.out.print("Creating new Driver");
-            driver = new FirefoxDriver();
+            System.out.println("Creating new driver");
+            String browser = System.getenv().get("browser");
+            if(browser.equals("ie")) WebConnector.driver = new InternetExplorerDriver();
+            if(browser.equals("chrome")) WebConnector.driver = new ChromeDriver();
+            if(browser == null || browser.equals("firefox")|| WebConnector.driver == null) WebConnector.driver = new FirefoxDriver();
         }
         return driver;
     }
 
-    public static WebDriver createChromeDriver(){
-        if(WebConnector.driver == null){
-            System.out.print("Creating new Driver");
-            driver = new ChromeDriver();
-        }
-        return driver;
-    }
-    public static WebDriver createIEDriver(){
-        if(WebConnector.driver == null){
-            System.out.print("Creating new Driver");
-            driver = new InternetExplorerDriver();
-        }
-        return driver;
-    }
-
-    public static WebDriver currentDriver(){
-        return driver;
-    }
-
-    public static void closeDriver() {
-        System.out.println("Closing driver");
+    public synchronized static void closeDriver() {
+        System.out.println("Closing current driver");
+        if(WebConnector.driver == null) return;
         WebConnector.driver.close();
         WebConnector.driver = null;
+        System.out.println("Closed driver");
     }
 
 }

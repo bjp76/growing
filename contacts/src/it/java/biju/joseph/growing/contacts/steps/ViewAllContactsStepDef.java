@@ -6,9 +6,7 @@ import biju.joseph.growing.contacts.pages.ViewAllContactsPage;
 import cucumber.annotation.After;
 import cucumber.annotation.Before;
 import cucumber.annotation.en.*;
-import cucumber.runtime.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
 
 /**
  * @author Biju Joseph
@@ -20,7 +18,7 @@ public class ViewAllContactsStepDef {
 
     @Before
     public void prepare(){
-         WebConnector.createIEDriver();
+         WebConnector.currentDriver();
     }
 
     @After
@@ -38,10 +36,9 @@ public class ViewAllContactsStepDef {
         contactsPage.openAndWait();
     }
 
-    @Then("^I should see the message 'No contacts available'$")
-    public void I_should_see_the_message_No_contacts_available() throws Throwable {
-        boolean noContactsPresent = contactsPage.hasNoContactsAvailableMessage();
-        assertTrue(noContactsPresent);
+    @Then("^I should see the message '(.*)'$")
+    public void I_should_see_the_message_There_are_no_contacts_available_in_the_system(String textToFind) throws Throwable {
+        assertTrue(contactsPage.hasText("//body", textToFind));
     }
 
 }

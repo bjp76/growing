@@ -1,6 +1,8 @@
 package biju.joseph.growing.contacts.pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 /**
  * @author Biju Joseph
@@ -24,4 +26,18 @@ public class Page {
         // driver.manage().timeouts().implicitlyWait(DEFAULT_TIMEOUT,
         // 					  TimeUnit.MILLISECONDS);
     }
+
+    public WebElement getElement(String xpath){
+        WebElement element = driver.findElement(By.xpath(xpath));
+        return element;
+    }
+
+    public boolean hasText(String xpath, String text){
+        return getElement(xpath).getText().contains(text);
+    }
+
+    public void setInputFieldValue(String inputElementXpath, String value){
+        getElement(inputElementXpath).sendKeys(value);
+    }
+
 }
