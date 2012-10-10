@@ -16,7 +16,7 @@ contacts
  This module contains a simple SpringMVC + Hibernate webapp along with the following kinds of tests
    - JUnit tests, with EasyMock
    - JUnit tests using DbUnit to test Repository layer
-   - Feature tests using cucumber-jvm
+   - Automated BDD tests using Cucumber (cucumber-jvm)
 
  TODOs
  -----
