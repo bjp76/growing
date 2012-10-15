@@ -1,6 +1,7 @@
 package biju.joseph.growing.contacts.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -33,7 +34,12 @@ public class Page {
     }
 
     public boolean hasText(String xpath, String text){
-        return getElement(xpath).getText().contains(text);
+        try{
+            return getElement(xpath).getText().contains(text);
+        }catch (NoSuchElementException e){
+            return false;
+        }
+
     }
 
     public void setInputFieldValue(String inputElementXpath, String value){

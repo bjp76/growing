@@ -10,11 +10,8 @@ import cucumber.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @Cucumber.Options(
-        format = {"html:target/cucumber"} ,
-        features = {
-                "classpath:biju/joseph/growing/contacts/a_view_all_contacts.feature",
-                "classpath:biju/joseph/growing/contacts/b_create_new_contact.feature"
-        }
+        format = {"html:target/cucumber"}
+
 )
 public class ContactsIT {
 }

@@ -18,4 +18,20 @@ public class ViewAllContactsPage extends Page{
        getElement("//input[@value='New Contact']").click();
     }
 
+
+    public void clickDeleteLink(){
+        getElement("//a[text()='Delete']").click();
+    }
+
+    public boolean hasContactWithGivenName(String name){
+        return hasText("/html/body/center/table/tbody/tr[2]/td[2]", name);
+    }
+
+    public void onDeleteConfirmBoxClickCancel(){
+        driver.switchTo().alert().dismiss();
+    }
+
+    public void onDeleteConfirmBoxClickOk(){
+        driver.switchTo().alert().accept();
+    }
 }

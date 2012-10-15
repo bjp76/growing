@@ -35,8 +35,4 @@ public class EditContactPage extends Page {
         getElement("//input[@value='Save']").click();
     }
 
-    public boolean hasContactWithGivenName(String name){
-        return hasText("/html/body/center/table/tbody/tr[2]/td[2]", name);
-    }
-
 }

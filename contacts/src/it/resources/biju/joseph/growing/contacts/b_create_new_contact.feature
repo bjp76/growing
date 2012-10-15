@@ -14,3 +14,11 @@ Scenario: Create new contact
         |mobile|+1 5712631173|
   And   I click 'Save' button
   Then  I should see view all contacts page with 'Joel Biju Joseph' in it.
+  When  I click on 'Delete' link
+  Then  I should see a Delete confirmation
+  When  I answer 'No'
+  Then  I should still see view all contacts page with 'Joel Biju Joseph' in it
+  When  I click on 'Delete' link
+  Then  I should see a Delete confirmation
+  When  I answer 'Yes'
+  Then  I should not see view all contacts page without 'Joel Biju Joseph' in it.

@@ -12,7 +12,7 @@ import cucumber.runtime.PendingException;
 import cucumber.table.DataTable;
 import gherkin.formatter.model.DataTableRow;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * @author Biju Joseph
@@ -67,7 +67,37 @@ public class CreateNewContactStepDef {
 
     @Then("^I should see view all contacts page with '(.*)' in it.$")
     public void I_should_see_view_all_contacts_page_with_Joel_Biju_Joseph_in_it(String name) throws Throwable {
-        assertTrue(newContactPage.hasContactWithGivenName(name));
+        assertTrue(contactsPage.hasContactWithGivenName(name));
     }
+    @When("^I click on 'Delete' link$")
+    public void I_click_on_Delete_link() throws Throwable {
+         contactsPage.clickDeleteLink();
+    }
+
+    @Then("^I should see a Delete confirmation$")
+    public void I_should_see_a_Delete_confirmation() throws Throwable {
+
+    }
+
+    @When("^I answer 'No'$")
+    public void I_answer_No() throws Throwable {
+        contactsPage.onDeleteConfirmBoxClickCancel();
+    }
+
+    @Then("^I should still see view all contacts page with '(.*)' in it$")
+    public void I_should_still_see_view_all_contacts_page_with_Joel_Biju_Joseph_in_it(String name) throws Throwable {
+        assertTrue(contactsPage.hasContactWithGivenName(name));
+    }
+
+    @When("^I answer 'Yes'$")
+    public void I_answer_Yes() throws Throwable {
+       contactsPage.onDeleteConfirmBoxClickOk();
+    }
+
+    @Then("^I should not see view all contacts page without '(.*)' in it.$")
+    public void I_should_not_see_view_all_contacts_page_without_Joel_Biju_Joseph_in_it(String name) throws Throwable {
+        assertFalse(contactsPage.hasContactWithGivenName(name));
+    }
+
 
 }
